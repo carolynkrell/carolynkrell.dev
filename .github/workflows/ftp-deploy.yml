@@ -25,10 +25,7 @@ jobs:
     
     # Upload only _site/ to FTP server using git-ftp
     - name: Upload site to FTP via git-ftp.
-      env: 
-        ftp_location:  # Pass in required secrets.
-        ftp_username: 
-        ftp_password:
+      uses: sebastianpopp/git-ftp-action@releases/v3
       with:
         url: ${{ secrets.FTP_LOCATION }}
         user: ${{ secrets.FTP_USERNAME }}
