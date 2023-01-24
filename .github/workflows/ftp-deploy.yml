@@ -8,25 +8,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '3.1'
-    # Install the gems in the gemfile & install ncftp
+    # Install the gems in the gemfile\
     - name: Setup Environment.
       run: |
         bundle install
-        sudo apt-get install -y ncftp
     
     # Build the site
     - name: Build Site with Jekyll.
       run: JEKYLL_ENV=production bundle exec jekyll build
     
-    # Looks kind of complicated but just uploads the content of _site folder to the ftp server. It does not upload the _site folder itself.
-    - name: Upload site to FTP.
+    # Upload only _site/ to FTP server using git-ftp
+    - name: Upload site to FTP via git-ftp.
       env: 
-        ftp_location: ${{ secrets.FTP_LOCATION }} # Pass in required secrets.
-        ftp_username: ${{ secrets.FTP_USERNAME }}
-        ftp_password: ${{ secrets.FTP_PASSWORD }} 
-      run: |
-        ncftpput -R -v -u "$ftp_username" -p "$ftp_password" $ftp_location /public_html _site/* 
+        ftp_location:  # Pass in required secrets.
+        ftp_username: 
+        ftp_password:
+      with:
+        url: ${{ secrets.FTP_LOCATION }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        syncroot: _site/
