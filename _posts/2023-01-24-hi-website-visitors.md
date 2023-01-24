@@ -8,6 +8,6 @@ hi visitors to my webbed site! this is a test post to see how things actually wo
 
 <a href="https://www.youtube.com/watch?v=pRisDso99s0" target="_blank">here's</a> a song i really like and here's an image of my Jonathan Coulton record:
 
-<img src="/assets/joco_record.jpg" alt="Artificial Heart by Jonathan Coulton" width="400"/>
+<img src="/assets/images/joco_record.jpg" alt="Artificial Heart by Jonathan Coulton" width="400"/>
 
 ok that's all right now thanks for visiting!
