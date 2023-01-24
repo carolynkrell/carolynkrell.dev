@@ -18,11 +18,16 @@ jobs:
     - name: Setup Environment.
       run: |
         bundle install
+        sudo apt-get install git-ftp
     
     # Build the site
     - name: Build Site with Jekyll.
       run: JEKYLL_ENV=production bundle exec jekyll build
     
+    # Catchup git-ftp
+    - name: Catchup git-ftp
+      run: git ftp catchup
+
     # Upload only _site/ to FTP server using git-ftp
     - name: Upload site to FTP via git-ftp.
       uses: sebastianpopp/git-ftp-action@releases/v3
