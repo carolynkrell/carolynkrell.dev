@@ -32,7 +32,7 @@ plugins:
 collections:
   posts: 
     output: true
-    permalink: /blog/:collection/:title
+    permalink: /blog/posts/:title/
 
 header: 'carolyn krell'
 
@@ -42,7 +42,7 @@ header_pages:
   - music.md
   - about.md
 
-footer: 'find me on <a href="https://twitter.com/carolynkrell/"">twitter</a> <a href="https://github.com/carolynkrell/">github</a>'
+footer: 'find me on <a href="https://twitter.com/carolynkrell/"">twitter</a> <a href="https://github.com/carolynkrell/">github</a> <a href="https://cohost.org/carolyn">cohost</a> <br /> <a href="mailto:contact@carolynkrell.dev">contact@carolynkrell.dev</a>'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
