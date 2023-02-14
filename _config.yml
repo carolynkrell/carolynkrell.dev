@@ -39,7 +39,7 @@ header: 'carolyn krell'
 header_pages:
   - home.md
   - blog.md
-  - music.md
+  - projects.md
   - about.md
 
 footer: 'find me on <a href="https://twitter.com/carolynkrell/"">twitter</a> <a href="https://github.com/carolynkrell/">github</a> <a href="https://cohost.org/carolyn">cohost</a> <br /> <a href="mailto:contact@carolynkrell.dev">contact@carolynkrell.dev</a>'
